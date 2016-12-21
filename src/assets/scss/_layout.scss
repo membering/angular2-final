@@ -1,0 +1,79 @@
+
+@import "variables";
+
+main-body {
+  vertical-align: top;
+  position: relative;
+  display: table-cell;
+  width: 100%;
+  .static-content-wrapper {
+    padding-bottom: 50px;
+  }
+}
+.wrapper {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  overflow: auto;
+  height:calc(100% - 36px);
+  position: relative;
+  .layout-static {
+    display: table-row;
+    height: 100%;
+  }
+}
+
+//popup login when time out
+.modal{
+  .login-block{
+    padding: 0;
+    background-color: $color-light;
+    margin: 0 auto;
+    float: none;
+    margin-top: 100px;
+    h3{
+      background-color: $color-sidebar;
+      color: $color-light;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-align: center;
+      position: relative;
+      padding: 10px;
+      margin: 0;
+      &:after{
+        content: "";
+        position: absolute;
+
+      }
+    }
+    .body-block{
+      padding: 15px;
+      .input-style{
+        padding-left: 43px;
+        position: relative;
+        input{
+          @include border-radius(0);
+          color: $color-primary;
+          border: none;
+          background-color: lighten($color-gray-lightest,40%);
+          height: 44px;
+          &:-webkit-autofill,&:-webkit-autofill:hover,&:-webkit-autofill:focus,&:-webkit-autofill:active{
+          }
+        }
+        i{
+          color: $color-light;
+          position: absolute;left: 0;
+          @include background($color-active);
+          top:0;
+          padding: 15px;
+          margin-right: 0;
+          width: 44px;height: 44px;
+
+        }
+        p{
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

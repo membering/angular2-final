@@ -1,0 +1,799 @@
+b{
+  font-weight: 600;
+}
+.layout-rf-block {
+  font-family: "Open Sans";
+  height: 100%;
+  background-color: #1d2029;
+
+  .rf-block {
+    .rf-layout {
+      position: relative;
+      width: 320px;
+      height: 480px;
+      margin: 40px auto;
+      border: 2px solid $color-gray-lightest;
+      overflow: hidden;
+      background-color: $color-light;
+      ul.rf-dashboard-nav {
+        li {
+          width: 50%;
+          height: 120px;
+          float: left;
+          padding: 10px;
+          overflow: hidden;
+          text-align: center;
+          &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 1s;
+            i {
+              color: $color-primary;
+              transition: 1s;
+            }
+          }
+          p {
+            text-align: left;
+            font-size: 14px;
+          }
+          i {
+            color: $color-light;
+            font-size: 64px;
+          }
+          &.color1 {
+            background-color: #70dbff;
+            i {
+              text-shadow: rgb(101, 211, 247) 1px 1px,
+              rgb(101, 211, 247) 2px 2px,
+              rgb(101, 211, 247) 3px 3px,
+              rgb(101, 211, 247) 4px 4px,
+              rgb(101, 211, 247) 5px 5px,
+              rgb(101, 211, 247) 6px 6px,
+              rgb(101, 211, 247) 7px 7px,
+              rgb(101, 211, 247) 8px 8px,
+              rgb(101, 211, 247) 9px 9px,
+              rgb(101, 211, 247) 10px 10px,
+              rgb(101, 211, 247) 11px 11px,
+              rgb(101, 211, 247) 12px 12px,
+              rgb(101, 211, 247) 13px 13px,
+              rgb(101, 211, 247) 14px 14px,
+              rgb(101, 211, 247) 15px 15px,
+              rgb(101, 211, 247) 16px 16px,
+              rgb(101, 211, 247) 17px 17px,
+              rgb(101, 211, 247) 18px 18px,
+              rgb(101, 211, 247) 19px 19px,
+              rgb(101, 211, 247) 20px 20px,
+              rgb(101, 211, 247) 21px 21px,
+              rgb(101, 211, 247) 22px 22px,
+              rgb(101, 211, 247) 23px 23px,
+              rgb(101, 211, 247) 24px 24px,
+              rgb(101, 211, 247) 25px 25px,
+              rgb(101, 211, 247) 26px 26px,
+              rgb(101, 211, 247) 27px 27px,
+              rgb(101, 211, 247) 28px 28px,
+              rgb(101, 211, 247) 29px 29px,
+              rgb(101, 211, 247) 30px 30px,
+              rgb(101, 211, 247) 31px 31px,
+              rgb(101, 211, 247) 32px 32px,
+              rgb(101, 211, 247) 33px 33px,
+              rgb(101, 211, 247) 34px 34px,
+              rgb(101, 211, 247) 35px 35px,
+              rgb(101, 211, 247) 36px 36px,
+              rgb(101, 211, 247) 37px 37px,
+              rgb(101, 211, 247) 38px 38px,
+              rgb(101, 211, 247) 39px 39px,
+              rgb(101, 211, 247) 40px 40px,
+              rgb(101, 211, 247) 41px 41px,
+              rgb(101, 211, 247) 42px 42px,
+              rgb(101, 211, 247) 43px 43px,
+              rgb(101, 211, 247) 44px 44px,
+              rgb(101, 211, 247) 45px 45px,
+              rgb(101, 211, 247) 46px 46px,
+              rgb(101, 211, 247) 47px 47px,
+              rgb(101, 211, 247) 48px 48px,
+              rgb(101, 211, 247) 49px 49px,
+              rgb(101, 211, 247) 50px 50px,
+              rgb(101, 211, 247) 51px 51px,
+              rgb(101, 211, 247) 52px 52px,
+              rgb(101, 211, 247) 53px 53px,
+              rgb(101, 211, 247) 54px 54px,
+              rgb(101, 211, 247) 55px 55px,
+              rgb(101, 211, 247) 56px 56px,
+              rgb(101, 211, 247) 57px 57px,
+              rgb(101, 211, 247) 58px 58px,
+              rgb(101, 211, 247) 59px 59px;
+            }
+          }
+          &.color2 {
+            background-color: #bbd07a;
+            i {
+              text-shadow: rgb(179, 200, 115) 1px 1px,
+              rgb(179, 200, 115) 2px 2px,
+              rgb(179, 200, 115) 3px 3px,
+              rgb(179, 200, 115) 4px 4px,
+              rgb(179, 200, 115) 5px 5px,
+              rgb(179, 200, 115) 6px 6px,
+              rgb(179, 200, 115) 7px 7px,
+              rgb(179, 200, 115) 8px 8px,
+              rgb(179, 200, 115) 9px 9px,
+              rgb(179, 200, 115) 10px 10px,
+              rgb(179, 200, 115) 11px 11px,
+              rgb(179, 200, 115) 12px 12px,
+              rgb(179, 200, 115) 13px 13px,
+              rgb(179, 200, 115) 14px 14px,
+              rgb(179, 200, 115) 15px 15px,
+              rgb(179, 200, 115) 16px 16px,
+              rgb(179, 200, 115) 17px 17px,
+              rgb(179, 200, 115) 18px 18px,
+              rgb(179, 200, 115) 19px 19px,
+              rgb(179, 200, 115) 20px 20px,
+              rgb(179, 200, 115) 21px 21px,
+              rgb(179, 200, 115) 22px 22px,
+              rgb(179, 200, 115) 23px 23px,
+              rgb(179, 200, 115) 24px 24px,
+              rgb(179, 200, 115) 25px 25px,
+              rgb(179, 200, 115) 26px 26px,
+              rgb(179, 200, 115) 27px 27px,
+              rgb(179, 200, 115) 28px 28px,
+              rgb(179, 200, 115) 29px 29px,
+              rgb(179, 200, 115) 30px 30px,
+              rgb(179, 200, 115) 31px 31px,
+              rgb(179, 200, 115) 32px 32px,
+              rgb(179, 200, 115) 33px 33px,
+              rgb(179, 200, 115) 34px 34px,
+              rgb(179, 200, 115) 35px 35px,
+              rgb(179, 200, 115) 36px 36px,
+              rgb(179, 200, 115) 37px 37px,
+              rgb(179, 200, 115) 38px 38px,
+              rgb(179, 200, 115) 39px 39px,
+              rgb(179, 200, 115) 40px 40px,
+              rgb(179, 200, 115) 41px 41px,
+              rgb(179, 200, 115) 42px 42px,
+              rgb(179, 200, 115) 43px 43px,
+              rgb(179, 200, 115) 44px 44px,
+              rgb(179, 200, 115) 45px 45px,
+              rgb(179, 200, 115) 46px 46px,
+              rgb(179, 200, 115) 47px 47px,
+              rgb(179, 200, 115) 48px 48px,
+              rgb(179, 200, 115) 49px 49px,
+              rgb(179, 200, 115) 50px 50px,
+              rgb(179, 200, 115) 51px 51px,
+              rgb(179, 200, 115) 52px 52px,
+              rgb(179, 200, 115) 53px 53px,
+              rgb(179, 200, 115) 54px 54px,
+              rgb(179, 200, 115) 55px 55px,
+              rgb(179, 200, 115) 56px 56px,
+              rgb(179, 200, 115) 57px 57px,
+              rgb(179, 200, 115) 58px 58px,
+              rgb(179, 200, 115) 59px 59px;
+
+            }
+          }
+          &.color3 {
+            background-color: #6fbd9e;
+            i {
+              text-shadow: rgb(101, 176, 146) 1px 1px,
+              rgb(101, 176, 146) 2px 2px,
+              rgb(101, 176, 146) 3px 3px,
+              rgb(101, 176, 146) 4px 4px,
+              rgb(101, 176, 146) 5px 5px,
+              rgb(101, 176, 146) 6px 6px,
+              rgb(101, 176, 146) 7px 7px,
+              rgb(101, 176, 146) 8px 8px,
+              rgb(101, 176, 146) 9px 9px,
+              rgb(101, 176, 146) 10px 10px,
+              rgb(101, 176, 146) 11px 11px,
+              rgb(101, 176, 146) 12px 12px,
+              rgb(101, 176, 146) 13px 13px,
+              rgb(101, 176, 146) 14px 14px,
+              rgb(101, 176, 146) 15px 15px,
+              rgb(101, 176, 146) 16px 16px,
+              rgb(101, 176, 146) 17px 17px,
+              rgb(101, 176, 146) 18px 18px,
+              rgb(101, 176, 146) 19px 19px,
+              rgb(101, 176, 146) 20px 20px,
+              rgb(101, 176, 146) 21px 21px,
+              rgb(101, 176, 146) 22px 22px,
+              rgb(101, 176, 146) 23px 23px,
+              rgb(101, 176, 146) 24px 24px,
+              rgb(101, 176, 146) 25px 25px,
+              rgb(101, 176, 146) 26px 26px,
+              rgb(101, 176, 146) 27px 27px,
+              rgb(101, 176, 146) 28px 28px,
+              rgb(101, 176, 146) 29px 29px,
+              rgb(101, 176, 146) 30px 30px,
+              rgb(101, 176, 146) 31px 31px,
+              rgb(101, 176, 146) 32px 32px,
+              rgb(101, 176, 146) 33px 33px,
+              rgb(101, 176, 146) 34px 34px,
+              rgb(101, 176, 146) 35px 35px,
+              rgb(101, 176, 146) 36px 36px,
+              rgb(101, 176, 146) 37px 37px,
+              rgb(101, 176, 146) 38px 38px,
+              rgb(101, 176, 146) 39px 39px,
+              rgb(101, 176, 146) 40px 40px,
+              rgb(101, 176, 146) 41px 41px,
+              rgb(101, 176, 146) 42px 42px,
+              rgb(101, 176, 146) 43px 43px,
+              rgb(101, 176, 146) 44px 44px,
+              rgb(101, 176, 146) 45px 45px,
+              rgb(101, 176, 146) 46px 46px,
+              rgb(101, 176, 146) 47px 47px,
+              rgb(101, 176, 146) 48px 48px,
+              rgb(101, 176, 146) 49px 49px,
+              rgb(101, 176, 146) 50px 50px,
+              rgb(101, 176, 146) 51px 51px,
+              rgb(101, 176, 146) 52px 52px,
+              rgb(101, 176, 146) 53px 53px,
+              rgb(101, 176, 146) 54px 54px,
+              rgb(101, 176, 146) 55px 55px,
+              rgb(101, 176, 146) 56px 56px,
+              rgb(101, 176, 146) 57px 57px,
+              rgb(101, 176, 146) 58px 58px,
+              rgb(101, 176, 146) 59px 59px;
+
+            }
+          }
+          &.color4 {
+            background-color: #edc36f;
+            i {
+              text-shadow: rgb(226, 184, 101) 1px 1px,
+              rgb(226, 184, 101) 2px 2px,
+              rgb(226, 184, 101) 3px 3px,
+              rgb(226, 184, 101) 4px 4px,
+              rgb(226, 184, 101) 5px 5px,
+              rgb(226, 184, 101) 6px 6px,
+              rgb(226, 184, 101) 7px 7px,
+              rgb(226, 184, 101) 8px 8px,
+              rgb(226, 184, 101) 9px 9px,
+              rgb(226, 184, 101) 10px 10px,
+              rgb(226, 184, 101) 11px 11px,
+              rgb(226, 184, 101) 12px 12px,
+              rgb(226, 184, 101) 13px 13px,
+              rgb(226, 184, 101) 14px 14px,
+              rgb(226, 184, 101) 15px 15px,
+              rgb(226, 184, 101) 16px 16px,
+              rgb(226, 184, 101) 17px 17px,
+              rgb(226, 184, 101) 18px 18px,
+              rgb(226, 184, 101) 19px 19px,
+              rgb(226, 184, 101) 20px 20px,
+              rgb(226, 184, 101) 21px 21px,
+              rgb(226, 184, 101) 22px 22px,
+              rgb(226, 184, 101) 23px 23px,
+              rgb(226, 184, 101) 24px 24px,
+              rgb(226, 184, 101) 25px 25px,
+              rgb(226, 184, 101) 26px 26px,
+              rgb(226, 184, 101) 27px 27px,
+              rgb(226, 184, 101) 28px 28px,
+              rgb(226, 184, 101) 29px 29px,
+              rgb(226, 184, 101) 30px 30px,
+              rgb(226, 184, 101) 31px 31px,
+              rgb(226, 184, 101) 32px 32px,
+              rgb(226, 184, 101) 33px 33px,
+              rgb(226, 184, 101) 34px 34px,
+              rgb(226, 184, 101) 35px 35px,
+              rgb(226, 184, 101) 36px 36px,
+              rgb(226, 184, 101) 37px 37px,
+              rgb(226, 184, 101) 38px 38px,
+              rgb(226, 184, 101) 39px 39px,
+              rgb(226, 184, 101) 40px 40px,
+              rgb(226, 184, 101) 41px 41px,
+              rgb(226, 184, 101) 42px 42px,
+              rgb(226, 184, 101) 43px 43px,
+              rgb(226, 184, 101) 44px 44px,
+              rgb(226, 184, 101) 45px 45px,
+              rgb(226, 184, 101) 46px 46px,
+              rgb(226, 184, 101) 47px 47px,
+              rgb(226, 184, 101) 48px 48px,
+              rgb(226, 184, 101) 49px 49px,
+              rgb(226, 184, 101) 50px 50px,
+              rgb(226, 184, 101) 51px 51px,
+              rgb(226, 184, 101) 52px 52px,
+              rgb(226, 184, 101) 53px 53px,
+              rgb(226, 184, 101) 54px 54px,
+              rgb(226, 184, 101) 55px 55px,
+              rgb(226, 184, 101) 56px 56px,
+              rgb(226, 184, 101) 57px 57px,
+              rgb(226, 184, 101) 58px 58px,
+              rgb(226, 184, 101) 59px 59px;
+
+            }
+          }
+          &.color5 {
+            background-color: #46d7c6;
+            i {
+              text-shadow: rgb(63, 205, 189) 1px 1px,
+              rgb(63, 205, 189) 2px 2px,
+              rgb(63, 205, 189) 3px 3px,
+              rgb(63, 205, 189) 4px 4px,
+              rgb(63, 205, 189) 5px 5px,
+              rgb(63, 205, 189) 6px 6px,
+              rgb(63, 205, 189) 7px 7px,
+              rgb(63, 205, 189) 8px 8px,
+              rgb(63, 205, 189) 9px 9px,
+              rgb(63, 205, 189) 10px 10px,
+              rgb(63, 205, 189) 11px 11px,
+              rgb(63, 205, 189) 12px 12px,
+              rgb(63, 205, 189) 13px 13px,
+              rgb(63, 205, 189) 14px 14px,
+              rgb(63, 205, 189) 15px 15px,
+              rgb(63, 205, 189) 16px 16px,
+              rgb(63, 205, 189) 17px 17px,
+              rgb(63, 205, 189) 18px 18px,
+              rgb(63, 205, 189) 19px 19px,
+              rgb(63, 205, 189) 20px 20px,
+              rgb(63, 205, 189) 21px 21px,
+              rgb(63, 205, 189) 22px 22px,
+              rgb(63, 205, 189) 23px 23px,
+              rgb(63, 205, 189) 24px 24px,
+              rgb(63, 205, 189) 25px 25px,
+              rgb(63, 205, 189) 26px 26px,
+              rgb(63, 205, 189) 27px 27px,
+              rgb(63, 205, 189) 28px 28px,
+              rgb(63, 205, 189) 29px 29px,
+              rgb(63, 205, 189) 30px 30px,
+              rgb(63, 205, 189) 31px 31px,
+              rgb(63, 205, 189) 32px 32px,
+              rgb(63, 205, 189) 33px 33px,
+              rgb(63, 205, 189) 34px 34px,
+              rgb(63, 205, 189) 35px 35px,
+              rgb(63, 205, 189) 36px 36px,
+              rgb(63, 205, 189) 37px 37px,
+              rgb(63, 205, 189) 38px 38px,
+              rgb(63, 205, 189) 39px 39px,
+              rgb(63, 205, 189) 40px 40px,
+              rgb(63, 205, 189) 41px 41px,
+              rgb(63, 205, 189) 42px 42px,
+              rgb(63, 205, 189) 43px 43px,
+              rgb(63, 205, 189) 44px 44px,
+              rgb(63, 205, 189) 45px 45px,
+              rgb(63, 205, 189) 46px 46px,
+              rgb(63, 205, 189) 47px 47px,
+              rgb(63, 205, 189) 48px 48px,
+              rgb(63, 205, 189) 49px 49px,
+              rgb(63, 205, 189) 50px 50px,
+              rgb(63, 205, 189) 51px 51px,
+              rgb(63, 205, 189) 52px 52px,
+              rgb(63, 205, 189) 53px 53px,
+              rgb(63, 205, 189) 54px 54px,
+              rgb(63, 205, 189) 55px 55px,
+              rgb(63, 205, 189) 56px 56px,
+              rgb(63, 205, 189) 57px 57px,
+              rgb(63, 205, 189) 58px 58px,
+              rgb(63, 205, 189) 59px 59px,
+              rgb(63, 205, 189) 60px 60px,
+              rgb(63, 205, 189) 61px 61px,
+              rgb(63, 205, 189) 62px 62px,
+              rgb(63, 205, 189) 63px 63px,
+              rgb(63, 205, 189) 64px 64px,
+              rgb(63, 205, 189) 65px 65px,
+              rgb(63, 205, 189) 66px 66px,
+              rgb(63, 205, 189) 67px 67px,
+              rgb(63, 205, 189) 68px 68px,
+              rgb(63, 205, 189) 69px 69px,
+              rgb(63, 205, 189) 70px 70px;
+
+            }
+          }
+          &.color6 {
+            background-color: #92a9eb;
+            i {
+              text-shadow: rgb(136, 159, 227) 1px 1px,
+              rgb(136, 159, 227) 2px 2px,
+              rgb(136, 159, 227) 3px 3px,
+              rgb(136, 159, 227) 4px 4px,
+              rgb(136, 159, 227) 5px 5px,
+              rgb(136, 159, 227) 6px 6px,
+              rgb(136, 159, 227) 7px 7px,
+              rgb(136, 159, 227) 8px 8px,
+              rgb(136, 159, 227) 9px 9px,
+              rgb(136, 159, 227) 10px 10px,
+              rgb(136, 159, 227) 11px 11px,
+              rgb(136, 159, 227) 12px 12px,
+              rgb(136, 159, 227) 13px 13px,
+              rgb(136, 159, 227) 14px 14px,
+              rgb(136, 159, 227) 15px 15px,
+              rgb(136, 159, 227) 16px 16px,
+              rgb(136, 159, 227) 17px 17px,
+              rgb(136, 159, 227) 18px 18px,
+              rgb(136, 159, 227) 19px 19px,
+              rgb(136, 159, 227) 20px 20px,
+              rgb(136, 159, 227) 21px 21px,
+              rgb(136, 159, 227) 22px 22px,
+              rgb(136, 159, 227) 23px 23px,
+              rgb(136, 159, 227) 24px 24px,
+              rgb(136, 159, 227) 25px 25px,
+              rgb(136, 159, 227) 26px 26px,
+              rgb(136, 159, 227) 27px 27px,
+              rgb(136, 159, 227) 28px 28px,
+              rgb(136, 159, 227) 29px 29px,
+              rgb(136, 159, 227) 30px 30px,
+              rgb(136, 159, 227) 31px 31px,
+              rgb(136, 159, 227) 32px 32px,
+              rgb(136, 159, 227) 33px 33px,
+              rgb(136, 159, 227) 34px 34px,
+              rgb(136, 159, 227) 35px 35px,
+              rgb(136, 159, 227) 36px 36px,
+              rgb(136, 159, 227) 37px 37px,
+              rgb(136, 159, 227) 38px 38px,
+              rgb(136, 159, 227) 39px 39px,
+              rgb(136, 159, 227) 40px 40px,
+              rgb(136, 159, 227) 41px 41px,
+              rgb(136, 159, 227) 42px 42px,
+              rgb(136, 159, 227) 43px 43px,
+              rgb(136, 159, 227) 44px 44px,
+              rgb(136, 159, 227) 45px 45px,
+              rgb(136, 159, 227) 46px 46px,
+              rgb(136, 159, 227) 47px 47px,
+              rgb(136, 159, 227) 48px 48px,
+              rgb(136, 159, 227) 49px 49px,
+              rgb(136, 159, 227) 50px 50px,
+              rgb(136, 159, 227) 51px 51px,
+              rgb(136, 159, 227) 52px 52px,
+              rgb(136, 159, 227) 53px 53px,
+              rgb(136, 159, 227) 54px 54px,
+              rgb(136, 159, 227) 55px 55px,
+              rgb(136, 159, 227) 56px 56px,
+              rgb(136, 159, 227) 57px 57px,
+              rgb(136, 159, 227) 58px 58px,
+              rgb(136, 159, 227) 59px 59px;
+
+            }
+          }
+          &.color7 {
+            background-color: #f19081;
+            i {
+              text-shadow: rgb(233, 134, 119) 1px 1px,
+              rgb(233, 134, 119) 2px 2px,
+              rgb(233, 134, 119) 3px 3px,
+              rgb(233, 134, 119) 4px 4px,
+              rgb(233, 134, 119) 5px 5px,
+              rgb(233, 134, 119) 6px 6px,
+              rgb(233, 134, 119) 7px 7px,
+              rgb(233, 134, 119) 8px 8px,
+              rgb(233, 134, 119) 9px 9px,
+              rgb(233, 134, 119) 10px 10px,
+              rgb(233, 134, 119) 11px 11px,
+              rgb(233, 134, 119) 12px 12px,
+              rgb(233, 134, 119) 13px 13px,
+              rgb(233, 134, 119) 14px 14px,
+              rgb(233, 134, 119) 15px 15px,
+              rgb(233, 134, 119) 16px 16px,
+              rgb(233, 134, 119) 17px 17px,
+              rgb(233, 134, 119) 18px 18px,
+              rgb(233, 134, 119) 19px 19px,
+              rgb(233, 134, 119) 20px 20px,
+              rgb(233, 134, 119) 21px 21px,
+              rgb(233, 134, 119) 22px 22px,
+              rgb(233, 134, 119) 23px 23px,
+              rgb(233, 134, 119) 24px 24px,
+              rgb(233, 134, 119) 25px 25px,
+              rgb(233, 134, 119) 26px 26px,
+              rgb(233, 134, 119) 27px 27px,
+              rgb(233, 134, 119) 28px 28px,
+              rgb(233, 134, 119) 29px 29px,
+              rgb(233, 134, 119) 30px 30px,
+              rgb(233, 134, 119) 31px 31px,
+              rgb(233, 134, 119) 32px 32px,
+              rgb(233, 134, 119) 33px 33px,
+              rgb(233, 134, 119) 34px 34px,
+              rgb(233, 134, 119) 35px 35px,
+              rgb(233, 134, 119) 36px 36px,
+              rgb(233, 134, 119) 37px 37px,
+              rgb(233, 134, 119) 38px 38px,
+              rgb(233, 134, 119) 39px 39px,
+              rgb(233, 134, 119) 40px 40px,
+              rgb(233, 134, 119) 41px 41px,
+              rgb(233, 134, 119) 42px 42px,
+              rgb(233, 134, 119) 43px 43px,
+              rgb(233, 134, 119) 44px 44px,
+              rgb(233, 134, 119) 45px 45px,
+              rgb(233, 134, 119) 46px 46px,
+              rgb(233, 134, 119) 47px 47px,
+              rgb(233, 134, 119) 48px 48px,
+              rgb(233, 134, 119) 49px 49px,
+              rgb(233, 134, 119) 50px 50px,
+              rgb(233, 134, 119) 51px 51px,
+              rgb(233, 134, 119) 52px 52px,
+              rgb(233, 134, 119) 53px 53px,
+              rgb(233, 134, 119) 54px 54px,
+              rgb(233, 134, 119) 55px 55px,
+              rgb(233, 134, 119) 56px 56px,
+              rgb(233, 134, 119) 57px 57px,
+              rgb(233, 134, 119) 58px 58px,
+              rgb(233, 134, 119) 59px 59px;
+
+            }
+          }
+          &.color8 {
+            background-color: #e7aeca;
+            i {
+              text-shadow: rgb(224, 162, 192) 1px 1px,
+              rgb(224, 162, 192) 2px 2px,
+              rgb(224, 162, 192) 3px 3px,
+              rgb(224, 162, 192) 4px 4px,
+              rgb(224, 162, 192) 5px 5px,
+              rgb(224, 162, 192) 6px 6px,
+              rgb(224, 162, 192) 7px 7px,
+              rgb(224, 162, 192) 8px 8px,
+              rgb(224, 162, 192) 9px 9px,
+              rgb(224, 162, 192) 10px 10px,
+              rgb(224, 162, 192) 11px 11px,
+              rgb(224, 162, 192) 12px 12px,
+              rgb(224, 162, 192) 13px 13px,
+              rgb(224, 162, 192) 14px 14px,
+              rgb(224, 162, 192) 15px 15px,
+              rgb(224, 162, 192) 16px 16px,
+              rgb(224, 162, 192) 17px 17px,
+              rgb(224, 162, 192) 18px 18px,
+              rgb(224, 162, 192) 19px 19px,
+              rgb(224, 162, 192) 20px 20px,
+              rgb(224, 162, 192) 21px 21px,
+              rgb(224, 162, 192) 22px 22px,
+              rgb(224, 162, 192) 23px 23px,
+              rgb(224, 162, 192) 24px 24px,
+              rgb(224, 162, 192) 25px 25px,
+              rgb(224, 162, 192) 26px 26px,
+              rgb(224, 162, 192) 27px 27px,
+              rgb(224, 162, 192) 28px 28px,
+              rgb(224, 162, 192) 29px 29px,
+              rgb(224, 162, 192) 30px 30px,
+              rgb(224, 162, 192) 31px 31px,
+              rgb(224, 162, 192) 32px 32px,
+              rgb(224, 162, 192) 33px 33px,
+              rgb(224, 162, 192) 34px 34px,
+              rgb(224, 162, 192) 35px 35px,
+              rgb(224, 162, 192) 36px 36px,
+              rgb(224, 162, 192) 37px 37px,
+              rgb(224, 162, 192) 38px 38px,
+              rgb(224, 162, 192) 39px 39px,
+              rgb(224, 162, 192) 40px 40px,
+              rgb(224, 162, 192) 41px 41px,
+              rgb(224, 162, 192) 42px 42px,
+              rgb(224, 162, 192) 43px 43px,
+              rgb(224, 162, 192) 44px 44px,
+              rgb(224, 162, 192) 45px 45px,
+              rgb(224, 162, 192) 46px 46px,
+              rgb(224, 162, 192) 47px 47px,
+              rgb(224, 162, 192) 48px 48px,
+              rgb(224, 162, 192) 49px 49px,
+              rgb(224, 162, 192) 50px 50px,
+              rgb(224, 162, 192) 51px 51px,
+              rgb(224, 162, 192) 52px 52px,
+              rgb(224, 162, 192) 53px 53px,
+              rgb(224, 162, 192) 54px 54px,
+              rgb(224, 162, 192) 55px 55px,
+              rgb(224, 162, 192) 56px 56px,
+              rgb(224, 162, 192) 57px 57px,
+              rgb(224, 162, 192) 58px 58px,
+              rgb(224, 162, 192) 59px 59px,
+              rgb(224, 162, 192) 60px 60px,
+              rgb(224, 162, 192) 61px 61px,
+              rgb(224, 162, 192) 62px 62px,
+              rgb(224, 162, 192) 63px 63px,
+              rgb(224, 162, 192) 64px 64px,
+              rgb(224, 162, 192) 65px 65px,
+              rgb(224, 162, 192) 66px 66px,
+              rgb(224, 162, 192) 67px 67px,
+              rgb(224, 162, 192) 68px 68px,
+              rgb(224, 162, 192) 69px 69px,
+              rgb(224, 162, 192) 70px 70px;
+
+            }
+          }
+
+        }
+      }
+      .rf-header {
+        background-color: $color-active;
+        width: 100%;
+        padding: 10px 5px;
+        font-size: 18px;
+        color: $color-light;
+        height: 44px;
+        .title {
+          text-transform: uppercase;
+          text-align: center;
+        }
+        .ex-menu, .back {
+          &:hover {
+            cursor: pointer;
+            i {
+              color: $color-gray;
+            }
+          }
+          i {
+            margin-right: 0;
+          }
+        }
+        .ex-menu {
+          position: relative;
+          ul.nav-menu {
+            position: absolute;
+            bottom: 0;
+            top: 34px;
+            right: -5px;
+            z-index: 999;
+            width: 240px;
+            li {
+              background: url('/assets/images/bg_opacity.png');
+              a {
+                text-transform: uppercase;
+                color: $color-light;
+                font-weight: 100;
+                &:hover {
+                  color: $color-active;
+                  background-color: transparent;
+                }
+              }
+              &.active {
+                a {
+                  font-weight: 600;
+                  font-size: 20px;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+      .rf-content {
+        padding: 10px;
+        height: 436px;
+        overflow-y: auto;
+        h3 {
+          margin: 5px 0 10px 0;
+          font-size: 28px;
+        }
+        .ico-noname {
+          font-size: 16px;
+          color: #545454;
+          float: right;
+          cursor: pointer;
+          &:hover{
+            color: $color-active;
+          }
+        }
+        .rf-table-style {
+          thead {
+            tr {
+              th {
+                background-color: #f4f4f4;
+                font-weight: normal;
+                font-size: 15px;
+                color: $color-gray;
+              }
+            }
+          }
+          tbody {
+            tr {
+              td {
+                font-size: 14px;
+                vertical-align: middle;
+                padding: 1px 5px;
+                a {
+                  text-decoration: underline;
+                }
+                &.text-success {
+                  text-align: center;
+                  color: #2ab300;
+                  i {
+                    font-size: 28px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .block-sku {
+          float: left;
+          width: 100%;
+          textarea{
+            width: 100%;
+            border-color: lighten($color-gray-lightest,35%);
+            font-size: 16px;
+          }
+          ul.rf-nav-list {
+            li {
+              width: 100%;
+              font-size: 20px;
+              font-weight: 500;
+              color: $color-gray;
+            }
+          }
+        }
+        .rf-radio {
+          float: left;
+          [type="radio"] {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+          }
+          span {
+            font-size: 14px;
+          }
+          label {
+            margin-right: 10px;
+            cursor: pointer;
+            margin-bottom: 0;
+          }
+
+          [type="radio"] + span {
+            display: block;
+          }
+
+          [type="radio"] + span:before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            vertical-align:-1px;
+            border-radius: 50%;
+            border: 2px solid $color-light;
+            box-shadow: 0 0 0 1px lighten($color-gray-lightest, 25%);
+            margin-right: 5px;
+            transition: 0.5s ease all;
+          }
+
+          [type="radio"]:checked + span:before {
+            background: $color-active;
+            box-shadow: 0 0 0 1px $color-active;
+            color: $color-active;
+          }
+        }
+      }
+      .rf-footer {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        .btn {
+          margin-left: 0;
+          width: 100%;
+          padding: 12px;
+          background-color: #545454;
+          color: #fff;
+          border: none;
+          font-size: 22px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.popovermenu {
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #000000;
+}
+
+.loading-overlay.loading-overlay-mb {
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  img {
+    margin: 0;
+    height: auto;
+    width: 45px;
+    top: 46%;
+    left: 42%;
+  }
+}

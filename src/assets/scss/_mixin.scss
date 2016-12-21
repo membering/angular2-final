@@ -1,0 +1,20 @@
+@import "variables";
+
+@mixin font-medium{
+  font-size: 13px;
+}
+@mixin font-small{
+  font-size: 11px;
+
+}
+@mixin font-mediumer{
+  font-size: 14px;
+}
+@mixin link-style1{
+  a{
+    color: #0057a8;
+    &:hover{
+      color: $color-danger;
+    }
+  }
+}

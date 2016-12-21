@@ -1,0 +1,176 @@
+.customFilter {
+  margin: 4px 4px 4px 0;
+  padding: 10px;
+  background: #fcfcfc;
+  border: 1px #ccc solid;
+  display: inline-block;
+}
+
+.oddRow {
+    background-color: #FFF;
+    height: 26px;
+}
+.evenRow {
+    height: 26px;
+    background-color: #F7F7F7;
+}
+
+.invoiceInfoCaption {
+    display: inline-block;
+    width: 180px;
+}
+.invoiceInfoValue {
+    display: inline-block;
+    width: 380px;
+    left: 180px;
+}
+
+.dialogTitle {
+    color: #D91E18;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.invoice-open-details-image {
+    padding-right: 5px;
+}
+
+.invoice-client-info-modal-dialog {
+    width: 826px;
+    height: 1000px;
+    margin: 30px auto;
+}
+
+.invoice-client-info-modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.red {
+    display: inline-block;
+    color: red;
+    font-size: 13px;
+    height: 0px;
+    vertical-align: top;
+}
+
+.customFilter {
+    margin: 4px;
+    padding: 10px;
+    background: #fcfcfc;
+    border: 1px #ccc solid;
+    display: inline-block;
+}
+
+#billTo tr td, #shipTo tr td {
+    padding-right: 4px;
+}
+
+.invoice-customer-contact-caption {
+    display: inline-block;
+    width: 100px;
+}
+
+.invoice-customer-contact-value {
+    display: inline-block;
+    width: 450px;
+}
+
+.invoice-customer-contact-input {
+    width: 450px;
+}
+
+.fullCellWidth {
+    width: 100%;
+}
+
+#profileDialog {
+    padding: 10px;
+}
+
+#profileDialog table td {
+    padding-left: 4px;
+}
+
+#customer-rates .costs-button {
+    height: 26px;
+    width: 80px;
+}
+
+#customer-rates [colid='update'], #customer-rates [colid='remove'] {
+    padding: 0px !important;
+}
+
+#customer-rates [colid='chg_cd_price'] {
+    color: rgba(75, 109, 160, 1);
+}
+
+.create-invoice-modal-dialog {
+  width: 1200px;
+  height: 1000px;
+  margin: 30px auto;
+}
+
+.create-invoice-modal-content {
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+.invoice-summary-content {
+    width: 350px;
+    text-align: right;
+}
+
+.invoice-summary-total {
+    width: 350px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.invoice-summary {
+    width: 190px;
+    margin-bottom: 10px;
+    margin-left: 800px;
+}
+
+.invoice-customer-info {
+    width: 590px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.invoice-payment-button {
+    width: 120px;
+}
+
+.table-button {
+  height: 26px !important;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+.invoice-cancel-button {
+  width: 80px !important;
+  height: 26px !important;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+.invoice-receive-payment-caption {
+  display: inline-block;
+  width: 150px;
+}
+
+.invoice-receive-payment-value {
+  display: inline-block;
+  width: 150px;
+}
+
+.invoice-receive-payment-input {
+  width: 150px;
+}
+
+

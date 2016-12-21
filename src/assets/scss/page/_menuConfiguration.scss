@@ -1,0 +1,120 @@
+/**
+ * Nestable
+ */
+
+.dd { position: relative; display: block; margin: 0; padding: 0; max-width: 1000px; list-style: none; font-size: 13px; line-height: 20px; }
+
+.dd-list { width: 100%; display: block; position: relative; margin: 10px 0 0 0; padding: 0; list-style: none; }
+.dd-list .dd-list { padding-left: 30px; }
+.dd-collapsed .dd-list { display: none; }
+
+.dd-item,
+.dd-empty,
+.dd-placeholder { display: block; position: relative; margin: 0; padding: 0; min-height: 36px; font-size: 13px; line-height: 36px; }
+
+.dd-item
+{
+  margin-bottom: 10px;
+
+}
+
+.dd-handle {
+  display: block; height: 36px;
+  padding: 0px 10px; color: #333;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  position: relative;
+  text-transform: uppercase;
+}
+.dd-handle:hover {
+  cursor: move;
+}
+._pointer
+{
+  cursor: pointer;
+}
+.btn-edit
+{
+
+  position: absolute;
+  top: 0;
+  display: block;
+  right: 0px;
+  cursor: pointer;
+  width: 30px;
+  height: 36px;
+  z-index: 999;
+  overflow: hidden;
+  text-indent: -999em;
+  background:  url(../images/arrows.png) no-repeat 8px 10px  $color-primary;
+}
+
+.btn-conf-menu-group
+{
+  display: inline-block;
+  margin-left: 0px;
+  cursor: pointer;
+
+  &.delete{
+    color:#b91f1f; 
+  }
+  &.edit{
+    color:#fceb77; 
+  }
+}
+
+.menu-item-setting
+{
+  border-color: #dfdfdf;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.menu-item-setting  .row-button button span{
+  display: inline-block;
+  margin-right: 5px;
+}
+.dd-item  .btn-collapse {
+  z-index: 999; display: block;
+  position: relative; cursor: pointer;
+  float: left; width: 25px; height: 36px;
+  margin: 0px 5px 0 0; padding: 0; text-indent: 100%;
+  white-space: nowrap; overflow: hidden; border: 0;
+  background: $color-primary; font-size: 12px; line-height: 1;
+  text-align: center; font-weight: bold;
+}
+.dd-item  .btn-collapse:before { content: '+'; display: block; position: absolute; width: 100%; text-align: center; text-indent: 0;color: $color-light }
+.dd-item  .btn-collapse[data-action="collapse"]:before { content: '-';color: #fff }
+
+.dd-placeholder,
+.dd-empty { margin: 5px 0; padding: 0; min-height: 30px; background: #f2fbff; border: 1px dashed #b6bcbf; box-sizing: border-box; -moz-box-sizing: border-box; }
+.dd-empty { border: 1px dashed #bbb; min-height: 100px; background-color: #e5e5e5;
+  background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+  -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+  background-image:    -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+  -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+  background-image:         linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+  linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.dd-dragel { position: absolute; pointer-events: none; z-index: 9999; }
+.dd-dragel > .dd-item .dd-handle { margin-top: 0; }
+.dd-dragel .dd-handle {
+  -webkit-box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
+  box-shadow: 2px 4px 6px 0 rgba(0,0,0,.1);
+}
+/**
+ * Nestable Extras
+ */
+.nestable-lists { display: block; clear: both; padding: 30px 0; width: 100%; border: 0; border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; }
+
+
+
+
+.dd-hover > .dd-handle { background: #2ea8e5 !important; }
+
+/**
+ * Nestable Draggable Handles
+ */

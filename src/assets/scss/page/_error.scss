@@ -1,0 +1,35 @@
+@import "../variables";
+
+.error-block {
+  padding: 100px;
+  .img-error {
+    &.img-deny {
+      margin-top: 70px;
+    }
+  }
+  .text-error {
+    padding: 70px 50px;
+    h1 {
+      text-transform: uppercase;
+      &.text-primary {
+        font-size: 50px;
+        color: $color-primary;
+      }
+      &.text-gray {
+        color: $color-gray-lightest;
+      }
+      &.text-danger {
+        color: $color-danger;
+      }
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    a {
+      color: $color-active;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import "variables";
+@import "compass/css3/images";
+@import "compass/css3/border-radius";
+
+.btn{
+  padding: 2.5px 20px;
+  transition: all .3s;
+  @include font-medium;
+  margin-left: 5px;
+  @include border-radius(0);
+  &.margin-top{
+    margin-top: 20px;
+  }
+  float: left;
+}
+.btn-primary{
+  background-color: $color-active;
+  border-color:darken($color-active,10%);
+  &:hover,&:focus{
+    background-color: darken($color-active,10%) !important;
+    border-color: darken($color-active,15%) !important;
+  }
+
+}
+.btn-default{
+  background-color: $color-light;
+}
+.btn-success{
+  background-color: $color-primary;
+  border-color: darken($color-primary,5%);
+  &:hover,&:focus{
+    background-color: $color-danger !important;
+    border-color: darken($color-danger,5%) !important;
+  }
+}
+.btn-group{
+  background-color:$color-light;
+  color: darken($color-active,10%);
+  border-color: darken($color-active,10%);
+  select{
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+  }
+  &:hover,&:focus{
+    background-color: darken($color-active,10%) !important;
+    color: $color-light !important;
+  }
+}
+
+
+.btn-outline{
+background-color: $color-light;
+  @include border-radius(0);
+  &.blue{
+    color: darken($color-active,10%);
+    border-color: darken($color-active,10%);
+    &:hover,&:focus{
+      color: $color-light;
+      background-color: $color-active !important;
+      border-color: $color-active !important;
+    }
+  }
+  &.gray{
+    color: lighten($color-gray-lightest,10%);
+    border-color: lighten($color-gray-lightest,15%);
+    &:hover,&:focus{
+      color: $color-light;
+      border-color: lighten($color-gray-lightest,20%) !important;
+      background-color: lighten($color-gray-lightest,20%) !important;
+    }
+  }
+  &.red{
+    height: auto !important;
+    color: $color-danger;
+    border-color: $color-danger;
+    &:hover,&:focus{
+      color: $color-light !important;
+      border-color: $color-danger !important;
+      background-color: $color-danger !important;
+    }
+  }
+}

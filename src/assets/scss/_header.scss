@@ -1,0 +1,207 @@
+@import "compass/css3/images";
+@import "variables";
+@import "mixin";
+
+.header {
+  margin-bottom: 0;
+  height: 36px;
+  min-height: auto;
+  color: $color-light;
+  background-color: $color-top;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+  left: 0;
+  right: 0;
+  .navbar-header {
+    width: 220px;
+    .logo {
+      width: 120px;
+      padding: 8.5px;
+      display: block;
+    }
+  }
+  ul.nav-drop {
+    li {
+      a {
+        cursor: pointer;
+        font-size: 11.25pt;
+        color: $color-light;
+        padding: 8px 20px;
+        font-style: inherit;
+        &:hover, &:focus {
+          background-color: transparent;
+          color: lighten($color-danger, 20%);
+        }
+      }
+      &.wms-dropdown, &.customer-dropdown {
+        ul {
+          max-height: 300px;
+          max-width: 300px;
+          overflow: auto;
+          margin-top: 2px;
+          left: 10px;
+          &:before {
+            position: absolute;
+            top: -8px;
+            left: calc(50% - 4px);
+            display: inline-block;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #fff;
+            border-left: 10px solid transparent;
+            content: '';
+          }
+          li {
+            a {
+              padding: 5px;
+              color: $color-gray-light;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              @include font-medium;
+              font-family: 'Raleway', sans-serif;
+              &:hover {
+                background-color: $color-active;
+                color: $color-light;
+              }
+            }
+            &:nth-child(2n) {
+              background-color: lighten($color-gray-lightest, 45%);
+            }
+          }
+        }
+      }
+    }
+
+  }
+  ul.toolbar {
+
+    li {
+      a {
+        padding-top: 14px;
+        i {
+          font-size: 16px;
+          &:hover {
+            color: lighten($color-danger, 20%);
+          }
+        }
+        &:hover, &:focus {
+          background-color: transparent;
+        }
+      }
+      &.dropdown-profile {
+
+        a {
+          padding: 5px;
+          color: $color-light;
+          font-family: 'Raleway', sans-serif;
+          font-size: 9.75pt;
+          span {
+            margin-right: 5px;
+            float: left;
+            line-height: 30px;
+            &.caret {
+              margin-top: 13px;
+            }
+          }
+          .image {
+            width: 24px;
+            height: 24px;
+            @include border-radius(50%);
+
+            img {
+              margin-right: 5px;
+            }
+            &:hover {
+              color: lighten($color-danger, 20%);
+            }
+          }
+        }
+        ul {
+          width: 100%;
+          margin-top: 2px;
+          box-shadow: none;
+          &:before {
+            position: absolute;
+            top: -8px;
+            left: 15px;
+            display: inline-block;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #fff;
+            border-left: 10px solid transparent;
+            content: '';
+          }
+          li {
+            a {
+              padding: 8px;
+              color: $color-gray-light;
+              &:hover {
+                background-color: lighten($color-gray-lightest, 45%);
+              }
+            }
+          }
+        }
+      }
+      &.notification {
+        padding: 7px;
+        a {
+          padding: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.report {
+  padding: 4px 10px;
+  background-color: #4b5a6e;
+  color: $color-light;
+  font-size: 12px;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-right: 5px;
+  border: 1px solid #7e8c9c;
+  &:hover {
+    background-color: $color-active;
+    color: $color-light;
+  }
+}
+
+.modal-style-specail {
+  width: 400px;
+  .modal-header {
+    padding: 10px;
+    background-color: lighten($color-gray-lightest, 43%);
+    .close{
+      position: absolute;
+      top: 1px;
+      right: 0;
+      width: 34px;
+      height: 30px;
+      font-size: 27px;
+      opacity: 1;
+      color: $color-danger;
+    }
+    .error-style{
+      display: flex;
+    }
+  }
+  .modal-content {
+    .form-group {
+      label {
+        font-weight: normal;
+      }
+    }
+    .browse{
+      padding: 3px 15px;
+      color: $color-primary;
+      &:hover{
+        background-color: $color-primary;
+        color: $color-light;
+      }
+    }
+  }
+  .modal-footer{
+    padding: 10px;
+  }
+}
+

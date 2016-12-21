@@ -1,0 +1,133 @@
+@import "../variables", "../reset";
+@import "compass/css3/images";
+
+.user-list {
+  .showing {
+    @include font-small;
+    font-weight: normal;
+    margin-right: 15px;
+    line-height: 30px;
+  }
+}
+
+ul.nav-tabs {
+  margin-bottom: 10px;
+  border-bottom: 1px solid lighten($color-sidebar,45%);
+  li {
+    a {
+      color: $color-light;
+      font-size: 9.75pt;
+      font-weight: 600;
+      padding: 0 25px;
+      padding-bottom: 2px;
+      line-height: 13px;
+      position: relative;
+      &.router-link-active {
+        background-color: transparent;
+        color: $color-active;
+        border-bottom: 1px solid $color-active;
+        &:after {
+          content: "";
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          border: 5px solid transparent;
+          border-top: 5px solid $color-active;
+          left: calc(50% - 9px);
+          bottom: -11px;
+        }
+      }
+      &:focus {
+        border-color: transparent;
+        border-bottom-color: $color-active;
+
+      }
+    }
+    &.active, &:focus {
+      a, a:focus {
+        background-color: transparent;
+        color: $color-active;
+        border-color: transparent;
+        border-bottom: 1px solid $color-active;
+        &:after {
+          content: "";
+          width: 0px;
+          height: 0px;
+          position: absolute;
+          border: 5px solid transparent;
+          border-top: 5px solid $color-active;
+          left: calc(50% - 9px);
+          bottom: -11px;
+        }
+      }
+    }
+    &:hover {
+      a {
+        background-color: transparent;
+        border-color: transparent;
+        color: $color-active;
+      }
+    }
+    &.active {
+      &:hover {
+        a {
+          background-color: transparent;
+          border-color: transparent;
+          border-bottom: 1px solid $color-active;
+          color: $color-active;
+          &:focus {
+            border-color: transparent;
+            border-bottom: 1px solid $color-active;
+          }
+        }
+      }
+    }
+  }
+}
+
+.role-detail, .user-detail {
+  p {
+    color: $color-gray-light;
+    @include font-medium;
+    b {
+      width: 120px;
+      display: inline-block;
+    }
+  }
+  .form-style {
+    .form-group {
+
+    }
+    ul.check-list {
+      li {
+        width: 24%;
+        display: inline-block;
+        margin-bottom: 10px;
+        background: url('/assets/images/tick.png') no-repeat;
+        padding-left: 25px;
+        background-position: left;
+        background-size: 13px;
+      }
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.5;
+  z-index: 99999;
+  img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+  }
+}

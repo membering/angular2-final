@@ -1,0 +1,131 @@
+@import "compass/css3/images";
+@import "variables";
+@import "compass/css3/border-radius";
+@import "mixin";
+
+.login-body{
+  background: url('/assets/images/bg-login.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .logo {
+    margin: 80px auto 50px;
+    width: 220px;
+  }
+  .login-page {
+    margin: 0 auto;
+    width: 380px;
+    background-color: $color-light;
+    .logo {
+      width: 80%;
+      margin: 0 auto;
+
+    }
+      h3 {
+        color: $color-light;
+        background-color: $color-sidebar;
+        margin-bottom: 0;
+        position: relative;
+        padding: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 0;
+        i{
+          padding: 10px;
+          border: 1px solid $color-light;
+          @include border-radius(50%);
+          margin-right:0;
+          margin-bottom: 1px;
+          display: inline-block;
+        }
+        span{
+          display: block;
+          font-weight: 500;
+        }
+      &:before{
+        position: absolute;
+        bottom: -8px;
+        left: calc( 50% - 10px);
+        display: inline-block;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $color-sidebar;
+        border-left: 10px solid transparent;
+        content: '';
+      }
+      }
+      .login-block{
+        padding:40px 20px;
+        .input-style{
+          padding-left: 43px;
+          position: relative;
+          input{
+            @include border-radius(0);
+            color: $color-primary;
+            border: none;
+            background-color: lighten($color-gray-lightest,40%);
+            height: 44px;
+            &:-webkit-autofill,&:-webkit-autofill:hover,&:-webkit-autofill:focus,&:-webkit-autofill:active{
+            }
+          }
+          i{
+            color: $color-light;
+            position: absolute;left: 0;
+            @include background($color-active);
+            top:0;
+            padding: 15px;
+            margin-right: 0;
+            width: 44px;height: 44px;
+
+          }
+          p{
+            margin-bottom: 15px;
+          }
+        }
+        .des-checkbox{
+              color: $color-primary;
+          margin-top: 10px;
+          float: left;
+          margin-left: 8px;
+        }
+        a.forgot-password{
+          color:$color-active;
+          &:hover{
+            text-decoration: none;
+            color: $color-sidebar;
+          }
+        }
+        .btn-login{
+          width: 100%;
+          padding: 10px;
+          font-size: 11pt;
+          font-weight: 600;
+          text-transform: uppercase;
+          text-align: center;
+          margin-top: 15px;
+        }
+        .error-style{
+          &:after{
+            right: 10px;
+            font-size: 24px;
+            bottom:4px;
+          }
+          .error{
+            bottom:45px !important;
+          }
+        }
+
+      }
+
+  }
+}
+
+//resposive
+@media screen and (max-width: 480px){
+
+}
+
+
+
+

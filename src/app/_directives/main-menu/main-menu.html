@@ -1,0 +1,28 @@
+<div class="static-sidebar-wrapper" [style.width]="getWidth()">
+    <div class="static-sidebar sidebar-menu-collapsed">
+        <div class="expand-collapse">
+            <a (click)="appendStyle = !appendStyle;" class="toogle-menu-icon" id="toogle-menu-icon">
+                <i class="icon-menu"></i>
+            </a>
+        </div>
+        <div class="favorite-block"></div>
+        <ul class="nav main-menu">
+            <li *ngFor="let item of menuData;let i=index" [class.parent-link-active]="item.active" [class.open]="item.open" [dropZones]="['menu']" dnd-draggable [dragEnabled]="item.url!=='#'" [dragData]="item">
+                <a *ngIf="item.url!=='#'" (click)="item.open=!item.open" [routerLink]="['/'+item.url]" id="component-{{item.menu_id}}" title="{{item.name}}">
+                    <i class="{{item.icon_class}}"></i>
+                    {{item.name}}
+                    <span  *ngIf="item.nodes.length>0" class="icon-toggle-sub"  [class.icon-toggle-sub-down]="item.active|| 'admin/'+item.url==menuActive"></span>
+                </a>
+                <a *ngIf="item.url=='#'" (click)="item.open=!item.open" id="component-{{item.menu_id}}"  title="{{item.name}}">
+                    <i class="{{item.icon_class}}"></i>
+                    {{item.name}}
+                    <span  *ngIf="item.nodes.length>0" class="icon-toggle-sub"  [class.icon-toggle-sub-down]="item.active|| 'admin/'+item.url==menuActive"></span>
+                </a>
+                <ul *ngIf="item.nodes.length>0" [class.open]="item.open" [hidden]="!item.open"  class="nav sub-nav sub-menu">
+                    <li  *ngFor="let itemchild of item.nodes" [dropZones]="['menu']" [class.active]="itemchild.active"  dnd-draggable [dragEnabled]="itemchild.url!=='#'" [dragData]="itemchild">
+                        <a id="component-{{itemchild.menu_id}}" [routerLink]="['/'+itemchild.url]" title="{{itemchild.name}}">{{itemchild.name}}</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
