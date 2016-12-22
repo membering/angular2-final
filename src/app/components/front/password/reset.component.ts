@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    templateUrl: 'register.html'
+    templateUrl: 'reset.html'
 })
 
-export class RegisterComponent implements OnInit {
+export class ResetComponent implements OnInit {
     constructor(
     ) { }
 

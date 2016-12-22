@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
-    templateUrl: 'dashboard.html'
+    templateUrl: 'orders.html'
 })
-export class DashboardComponent {
+export class OrdersListComponent {
     title: string;
 
     constructor(

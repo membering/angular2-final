@@ -9,8 +9,13 @@ import {AppComponent} from './app.component';
 
 import {AuthGuard} from './_guards/index';
 
-import {HomeModule} from './components/home/home.module';
+import {HomeModule} from './components/home/index';
+import {ProfileModule} from './components/home/profile/index';
+
+import {BreadcrumbDirective} from './_directives/breadcrumb/breadcrumb';
+import {Page404Component} from './components/front/pages/index';
 import {LoginComponent, RegisterComponent} from './components/front/index';
+import {ForgotComponent, ResetComponent} from './components/front/password/index';
 
 @NgModule({
     imports: [
@@ -18,11 +23,15 @@ import {LoginComponent, RegisterComponent} from './components/front/index';
         FormsModule, ReactiveFormsModule,
         HttpModule,
         AppRoutes,
-        HomeModule
+        HomeModule,
+        ProfileModule
     ],
     declarations: [
         AppComponent,
-        LoginComponent, RegisterComponent
+        BreadcrumbDirective,
+        Page404Component,
+        LoginComponent, RegisterComponent,
+        ForgotComponent, ResetComponent
     ],
     providers: [
         AUTH_PROVIDERS,

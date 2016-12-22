@@ -1,0 +1,30 @@
+<div class="navbar header">
+    <div class="navbar-header">
+        <a class="logo" [routerLink]="['']" tabindex="-1">
+            <img src="/assets/images/logo.png" alt="" class="img-responsive">
+        </a>
+    </div>
+    <ul class="nav navbar-nav pull-right toolbar">
+        <li class="dropdown dropdown-profile">
+            <a id="profile-drop" class="dropdown-toggle" aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" href="#">
+                <span class="image">
+                    <img class="avatar img-responsive" src="/assets/images/avatar.png"/>
+                </span>
+                <span><span style="float:none;" class="user-fullname">{{profile.name}}</span></span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="profile-drop">
+                <li>
+                    <a [routerLink]="['/profile']">
+                        <i class="icon-people"></i>Profile
+                    </a>
+                </li>
+                <li>
+                    <a (click)="logout()">
+                        <i class="icon-logout"></i>Sign Out
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

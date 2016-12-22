@@ -5,22 +5,39 @@
                 <i class="icon-menu"></i>
             </a>
         </div>
-        <div class="favorite-block"></div>
+        <div class="favorite-block">
+            <div class="nav favorite-menu read-more-wrap">
+                <h5 class="title"><i class="icon-heart"></i>My Favorite</h5>
+                <ul id="ul-favorite-menu" dnd-droppable (onDropSuccess)="updateMenuFavorite($event)" [dropZones]="['menu']">
+                    <span *ngIf="menuFavorite.length==0" class="drop-favorite-here">
+                        <p>Drap/Drop menu into here</p>
+                    </span>
+                    <li *ngFor="let item of menuFavorite;let i=index" class="{{i>3&&!showAllMenuFavorite?'hidden':'show'}}">
+                        <a (click)="initMenu()" [routerLink]="['/'+item.url]">
+                            <i class="{{item.icon_class}}"></i>{{item.name}}
+                        </a>
+                        <span (click)="removeItemFavorite(item)" title="Delete" class="delete-icon"><i class="fa fa-remove"></i></span>
+                    </li>
+                    <li class="show-more" [class.hasToggleMenu]="showAllMenuFavorite" (click)="showAllMenuFavorite=!showAllMenuFavorite" *ngIf="menuFavorite&&menuFavorite.length>4"></li>
+                </ul>
+            </div>
+        </div>
         <ul class="nav main-menu">
+            <span class="loading" *ngIf="!menuData.length">Menu is empty</span>
             <li *ngFor="let item of menuData;let i=index" [class.parent-link-active]="item.active" [class.open]="item.open" [dropZones]="['menu']" dnd-draggable [dragEnabled]="item.url!=='#'" [dragData]="item">
-                <a *ngIf="item.url!=='#'" (click)="item.open=!item.open" [routerLink]="['/'+item.url]" id="component-{{item.menu_id}}" title="{{item.name}}">
+                <a *ngIf="item.url!='#'" (click)="initMenu()" [routerLink]="['/'+item.url]" id="component-{{item.menu_id}}" title="{{item.name}}">
                     <i class="{{item.icon_class}}"></i>
                     {{item.name}}
-                    <span  *ngIf="item.nodes.length>0" class="icon-toggle-sub"  [class.icon-toggle-sub-down]="item.active|| 'admin/'+item.url==menuActive"></span>
                 </a>
                 <a *ngIf="item.url=='#'" (click)="item.open=!item.open" id="component-{{item.menu_id}}"  title="{{item.name}}">
                     <i class="{{item.icon_class}}"></i>
                     {{item.name}}
-                    <span  *ngIf="item.nodes.length>0" class="icon-toggle-sub"  [class.icon-toggle-sub-down]="item.active|| 'admin/'+item.url==menuActive"></span>
+                    <span *ngIf="item.nodes.length>0" class="icon-toggle-sub" [class.icon-toggle-sub-down]="item.active||item.url==activeUrl"></span>
                 </a>
-                <ul *ngIf="item.nodes.length>0" [class.open]="item.open" [hidden]="!item.open"  class="nav sub-nav sub-menu">
-                    <li  *ngFor="let itemchild of item.nodes" [dropZones]="['menu']" [class.active]="itemchild.active"  dnd-draggable [dragEnabled]="itemchild.url!=='#'" [dragData]="itemchild">
-                        <a id="component-{{itemchild.menu_id}}" [routerLink]="['/'+itemchild.url]" title="{{itemchild.name}}">{{itemchild.name}}</a></li>
+                <ul *ngIf="item.url=='#'" [class.open]="item.open" [hidden]="!item.open"  class="nav sub-nav sub-menu">
+                    <li  *ngFor="let itemchild of item.nodes" [dropZones]="['menu']" [class.active]="itemchild.active" dnd-draggable [dragEnabled]="itemchild.url!='#'" [dragData]="itemchild">
+                        <a id="component-{{itemchild.menu_id}}" (click)="initMenu()" [routerLink]="['/'+itemchild.url]" title="{{itemchild.name}}">{{itemchild.name}}</a>
+                    </li>
                 </ul>
             </li>
         </ul>

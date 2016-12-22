@@ -7,22 +7,26 @@ import {DndModule} from 'ng2-dnd';
 import {HomeComponent} from './index';
 
 import {HttpClient} from '../../_libraries/index';
-import {MainMenuDirective} from '../../_directives/index';
+import {HeaderDirective, MainMenuDirective, MainBodyDirective} from '../../_directives/index';
 import {MainMenuService} from '../../services/index'
 
+// import {ProfileModule} from './profile/index';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {OrdersListComponent} from './orders/orders.component';
 
 @NgModule({
     imports: [
         RouterModule,
         BrowserModule,
         FormsModule, ReactiveFormsModule,
-        DndModule.forRoot()
+        DndModule.forRoot(),
+        // ProfileModule
     ],
     declarations: [
         HomeComponent,
-        MainMenuDirective,
-        DashboardComponent
+        HeaderDirective, MainMenuDirective, MainBodyDirective,
+        DashboardComponent,
+        OrdersListComponent
     ],
     providers: [
         HttpClient,
