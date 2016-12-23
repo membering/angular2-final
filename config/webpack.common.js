@@ -59,7 +59,8 @@ module.exports = {
 
         new CopyWebpackPlugin([
             { from: helpers.root('src/assets/icon'), to: 'assets/icon' },
-            { from: helpers.root('src/assets/images'), to: 'assets/images' }
+            { from: helpers.root('src/assets/images'), to: 'assets/images' },
+            { from: helpers.root('src/assets/js'), to: 'assets/js' }
         ]),
 
         new HtmlWebpackPlugin({

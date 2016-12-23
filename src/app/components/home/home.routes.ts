@@ -10,7 +10,6 @@ export const homeRoutes: Routes = [
     {
         path: '',
         component: HomeComponent,
-        data: {name: 'Home'},
         children: [
             {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
             {path: 'dashboard', component: DashboardComponent, data: {name: 'Dashboard'}},

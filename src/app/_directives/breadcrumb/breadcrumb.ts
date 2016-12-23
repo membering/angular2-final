@@ -16,7 +16,7 @@ export class BreadcrumbDirective implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.router.events.subscribe(event => {
+        this.router.events.subscribe(() => {
             this.breadcrumbs = [];
             this.parseRoute(this.router.routerState.snapshot.root);
         });
