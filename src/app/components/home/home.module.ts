@@ -2,15 +2,17 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AUTH_PROVIDERS} from 'angular2-jwt';
 import {DndModule} from 'ng2-dnd';
 
+import {ProfileModule} from './profile/index';
 import {HomeComponent} from './index';
 
 import {HttpClient} from '../../_libraries/index';
-import {HeaderDirective, MainMenuDirective, MainBodyDirective} from '../../_directives/index';
-import {MainMenuService} from '../../services/index'
+import {AuthGuard} from '../../_guards/index';
+import {MainMenuService} from '../../services/index';
+import {BreadcrumbDirective, HeaderDirective, MainMenuDirective, MainBodyDirective} from '../../_directives/index';
 
-// import {ProfileModule} from './profile/index';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {OrdersListComponent} from './orders/orders.component';
 
@@ -20,19 +22,20 @@ import {OrdersListComponent} from './orders/orders.component';
         BrowserModule,
         FormsModule, ReactiveFormsModule,
         DndModule.forRoot(),
-        // ProfileModule
+        ProfileModule
     ],
     declarations: [
         HomeComponent,
-        HeaderDirective, MainMenuDirective, MainBodyDirective,
+        BreadcrumbDirective, HeaderDirective, MainMenuDirective, MainBodyDirective,
         DashboardComponent,
         OrdersListComponent
     ],
     providers: [
+        AUTH_PROVIDERS,
         HttpClient,
+        AuthGuard,
         MainMenuService
-    ],
-    bootstrap: [HomeComponent]
+    ]
 })
 
 export class HomeModule {}
