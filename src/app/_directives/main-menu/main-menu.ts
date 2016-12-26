@@ -1,6 +1,6 @@
 import {Component, ElementRef, Renderer, OnInit} from '@angular/core';
 import {Router, ActivatedRouteSnapshot} from '@angular/router';
-import {MainMenuService} from '../../services/main-menu.service';
+import {MenuService} from '../../services/index';
 
 @Component({
     selector: 'main-menu',
@@ -18,7 +18,7 @@ export class MainMenuDirective implements OnInit {
         private router: Router,
         private el: ElementRef,
         private renderer: Renderer,
-        private service: MainMenuService,
+        private service: MenuService,
     ) {
         this.router.events.subscribe(() => {
             this.getActiveUrl(this.router.routerState.snapshot.root);
@@ -126,7 +126,7 @@ export class MainMenuDirective implements OnInit {
         let position = this.menuFavorite.length;
         if (this.menuFavorite.length == 0) {
             this.menuFavorite.push(item);
-            this.service.addFavorite(item.menu_id, position + 1);
+            this.service.addFavorite(item.menu_id, position + 1).subscribe();
         }
         else {
             for (let i in this.menuFavorite) {
@@ -137,7 +137,7 @@ export class MainMenuDirective implements OnInit {
             }
             if (found == 0) {
                 this.menuFavorite.push(item);
-                this.service.addFavorite(item.menu_id, position + 1);
+                this.service.addFavorite(item.menu_id, position + 1).subscribe();
             }
         }
         this.loadFavoriteMenu(true);
@@ -146,7 +146,7 @@ export class MainMenuDirective implements OnInit {
     removeItemFavorite(item: any) {
         let index = this.menuFavorite.indexOf(item);
         this.menuFavorite.splice(index, 1);
-        this.service.removeItemFavorite(item.menu_id);
+        this.service.removeItemFavorite(item.menu_id).subscribe();
         this.loadFavoriteMenu(true);
     }
 }

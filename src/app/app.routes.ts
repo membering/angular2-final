@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 
 import {Page404Component} from './components/front/pages/index';
 import {LoginComponent, RegisterComponent} from './components/front/index';

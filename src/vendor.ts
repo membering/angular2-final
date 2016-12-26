@@ -20,3 +20,4 @@ import './assets/scss/styles.scss';
 
 import 'bootstrap';
 import '../bower_components/jquery-ui/jquery-ui.js';
+// import './assets/js/jquery.nestable.js';

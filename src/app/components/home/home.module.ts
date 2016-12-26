@@ -10,11 +10,12 @@ import {HomeComponent} from './index';
 
 import {HttpClient} from '../../_libraries/index';
 import {AuthGuard} from '../../_guards/index';
-import {MainMenuService} from '../../services/index';
+import {MenuService} from '../../services/index';
 import {BreadcrumbDirective, HeaderDirective, MainMenuDirective, MainBodyDirective} from '../../_directives/index';
 
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {OrdersListComponent} from './orders/orders.component';
+import {MenuComponent} from './menu/menu.component';
 
 @NgModule({
     imports: [
@@ -28,14 +29,15 @@ import {OrdersListComponent} from './orders/orders.component';
         HomeComponent,
         BreadcrumbDirective, HeaderDirective, MainMenuDirective, MainBodyDirective,
         DashboardComponent,
-        OrdersListComponent
+        OrdersListComponent,
+        MenuComponent
     ],
     providers: [
         Title,
         AUTH_PROVIDERS,
         HttpClient,
         AuthGuard,
-        MainMenuService
+        MenuService
     ]
 })
 
