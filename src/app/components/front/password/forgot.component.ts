@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Http, Response, Headers} from '@angular/http';
 import {Router} from "@angular/router";
-declare var $: any;
+declare const $: any;
 
 @Component({
     templateUrl: 'forgot.html'

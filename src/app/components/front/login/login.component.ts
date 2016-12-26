@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {Http, Response, Headers} from '@angular/http';
-import {Router} from "@angular/router";
-declare var $: any;
+import {Http, Response} from '@angular/http';
+import {Router} from '@angular/router';
+import 'rxjs/add/operator/map';
+declare const $: any;
 
 @Component({
     templateUrl: 'login.html'
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        localStorage.clear();
         this.buildForm();
     }
 
@@ -33,11 +35,8 @@ export class LoginComponent implements OnInit {
         this.submitted = true;
         if (this.form.valid) {
             this.loading = true;
-            let data = $.param(this.form.value);
-            let headers = new Headers();
-            headers.append('Content-Type', 'application/x-www-form-urlencoded');
-            this.http.post(process.env.apiUrl + '/master-service/v1/login', data, {headers: headers})
-                .map((response: Response) => response.json())
+            this.http.post(process.env.apiUrl + '/master-service/v1/login', this.form.value)
+                .map((res: Response) => res.json())
                 .subscribe(
                     res => {
                         this.loading = false;

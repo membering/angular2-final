@@ -15,7 +15,7 @@ module.exports = {
 
     resolve: {
         extensions: ['', '.ts', '.js'],
-        modules: [helpers.root('src'), helpers.root('node_modules'), helpers.root('bower_components')]
+        modules: [helpers.root('src'), helpers.root('node_modules')]
     },
 
     module: {
@@ -23,7 +23,12 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: [/\.(spec|e2e)\.ts$/],
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+                loaders: ['awesome-typescript', 'angular2-template']
+            },
+            {
+                test: /\.js$/,
+                include: helpers.root('src', 'assets'),
+                loaders: 'script'
             },
             {
                 test: /\.html$/,
@@ -58,9 +63,9 @@ module.exports = {
         }),
 
         new CopyWebpackPlugin([
-            { from: helpers.root('src/assets/icon'), to: 'assets/icon' },
-            { from: helpers.root('src/assets/images'), to: 'assets/images' },
-            { from: helpers.root('src/assets/js'), to: 'assets/js' }
+            {from: helpers.root('src/assets/icon'), to: 'assets/icon'},
+            {from: helpers.root('src/assets/images'), to: 'assets/images'}
+            // {from: helpers.root('src/assets/js'), to: 'assets/js'}
         ]),
 
         new HtmlWebpackPlugin({

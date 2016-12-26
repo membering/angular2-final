@@ -22,11 +22,12 @@ export class MainMenuDirective implements OnInit {
     ) {
         this.router.events.subscribe(() => {
             this.getActiveUrl(this.router.routerState.snapshot.root);
-            this.loadLeftMenu();
+            this.initMenu();
         });
     }
 
     ngOnInit() {
+        this.loadLeftMenu();
         this.loadFavoriteMenu();
     }
 
@@ -56,7 +57,15 @@ export class MainMenuDirective implements OnInit {
     }
 
     initMenu() {
-        let menuCpn;
+        this.menuData.forEach((menu: any) => {
+            menu['active'] = false;
+            menu['open'] = false;
+            menu['nodes'].forEach((menuChild: any) => {
+                menuChild['active'] = false;
+                menuChild['open'] = false;
+            })
+        });
+        let menuCpn: any;
         for (let i in this.menuData) {
             let subMenu = this.menuData[i]['nodes'];
             if (subMenu.length) {
@@ -85,16 +94,14 @@ export class MainMenuDirective implements OnInit {
             this.initMenu();
         }
         else {
-            this.service.getLeftMenu().subscribe(
-                res => {
-                    localStorage.setItem('leftmenu', JSON.stringify(res.data));
-                    this.menuData = res.data;
-                    this.initMenu();
-                },
-                error => {
-                    console.log(error);
-                }
-            );
+            this.service.getLeftMenu()
+                .subscribe(
+                    res => {
+                        localStorage.setItem('leftmenu', JSON.stringify(res.data));
+                        this.menuData = res.data;
+                        this.initMenu();
+                    }
+                );
         }
     }
 
@@ -103,15 +110,13 @@ export class MainMenuDirective implements OnInit {
             this.menuFavorite = JSON.parse(localStorage.getItem('favoritemenu'));
         }
         else {
-            this.service.getFavoriteMenu().subscribe(
-                res => {
-                    localStorage.setItem('favoritemenu', JSON.stringify(res.data));
-                    this.menuFavorite = res.data;
-                },
-                error => {
-                    console.log(error);
-                }
-            );
+            this.service.getFavoriteMenu()
+                .subscribe(
+                    res => {
+                        localStorage.setItem('favoritemenu', JSON.stringify(res.data));
+                        this.menuFavorite = res.data;
+                    }
+                );
         }
     }
 
@@ -121,14 +126,7 @@ export class MainMenuDirective implements OnInit {
         let position = this.menuFavorite.length;
         if (this.menuFavorite.length == 0) {
             this.menuFavorite.push(item);
-            this.service.addFavorite(item.menu_id, position + 1).subscribe(
-                res => {
-                    //
-                },
-                error => {
-                    console.log(error);
-                }
-            );
+            this.service.addFavorite(item.menu_id, position + 1);
         }
         else {
             for (let i in this.menuFavorite) {
@@ -139,14 +137,7 @@ export class MainMenuDirective implements OnInit {
             }
             if (found == 0) {
                 this.menuFavorite.push(item);
-                this.service.addFavorite(item.menu_id, position + 1).subscribe(
-                    res => {
-                        //
-                    },
-                    error => {
-                        console.log(error);
-                    }
-                );
+                this.service.addFavorite(item.menu_id, position + 1);
             }
         }
         this.loadFavoriteMenu(true);
@@ -155,14 +146,7 @@ export class MainMenuDirective implements OnInit {
     removeItemFavorite(item: any) {
         let index = this.menuFavorite.indexOf(item);
         this.menuFavorite.splice(index, 1);
-        this.service.removeItemFavorite(item.menu_id).subscribe(
-            res => {
-                //
-            },
-            error => {
-                console.log(error);
-            }
-        );
+        this.service.removeItemFavorite(item.menu_id);
         this.loadFavoriteMenu(true);
     }
 }
