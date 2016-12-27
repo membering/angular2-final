@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRouteSnapshot} from '@angular/router';
 import {Title} from '@angular/platform-browser';
+import {ToastyConfig} from 'ng2-toasty';
 
 @Component({
     selector: 'main-body',
@@ -13,8 +14,11 @@ export class MainBodyDirective implements OnInit {
 
     constructor(
         private router: Router,
-        private titleService: Title
+        private titleService: Title,
+        private toastyConfig: ToastyConfig
     ) {
+        this.toastyConfig.timeout = 0;
+        this.toastyConfig.position = 'top-right';
     }
 
     ngOnInit() {

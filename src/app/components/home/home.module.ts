@@ -3,6 +3,7 @@ import {RouterModule} from '@angular/router';
 import {BrowserModule, Title} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AUTH_PROVIDERS} from 'angular2-jwt';
+import {ToastyModule} from 'ng2-toasty';
 import {DndModule} from 'ng2-dnd';
 
 import {ProfileModule} from './profile/index';
@@ -22,6 +23,7 @@ import {MenuComponent, TreeView} from './menu/index';
         RouterModule,
         BrowserModule,
         FormsModule, ReactiveFormsModule,
+        ToastyModule.forRoot(),
         DndModule.forRoot(),
         ProfileModule
     ],
