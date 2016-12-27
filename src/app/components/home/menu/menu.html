@@ -1,0 +1,158 @@
+<div class="layout-block clearfix">
+    <div class="form-inline">
+        <div class="form-group">
+            <button class="btn btn-success" data-toggle="modal" data-target="#modalAddMenu">
+                <i class="fa fa-plus"></i> Add Menu
+            </button>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modalAddGroup">
+                <i class="fa fa-plus-square"></i> Add Group
+            </button>
+            <select class="form-control" style="margin-left: 5px"
+                    [(ngModel)]="selectedGroup" (ngModelChange)="selectGroup($event)">
+                <option *ngFor="let item of listGroups" [ngValue]="item">{{item.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>{{selectedGroup.name}}</h3>
+            <span class="_pointer btn-conf-menu-group" data-toggle="modal" data-target="#modalEditGroup"><i class="fa fa-edit"></i></span>
+            <span (click)="removeGroup()" class="remove-group-menu btn-conf-menu-group"><i class="fa fa-remove"></i></span>
+        </div>
+        <div class="panel-body">
+            <div class="dd" *ngIf="listMenus.length>0">
+                <tree-view [listMenus]="listMenus"></tree-view>
+            </div>
+            <button class="btn btn-primary" (click)="onSubmit()">Update</button>
+        </div>
+    </div>
+</div>
+
+<div id="modalAddMenu" class="modal fade" role="dialog">
+    <form class="form-addMenu" [formGroup]="formAddMenu" (ngSubmit)="addMenu()" novalidate>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Menu</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group" [class.error-style]="sbmAddMenu && formAddMenu.controls.name.errors">
+                        <label>Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                        <p *ngIf="sbmAddMenu && formAddMenu.controls.name.hasError('required')" class="error">
+                            Name is required.
+                        </p>
+                    </div>
+                    <div class="form-group" [class.error-style]="sbmAddMenu && formAddMenu.controls.url.errors">
+                        <label>Url</label>
+                        <input type="text" class="form-control" formControlName="url">
+                        <p *ngIf="sbmAddMenu && formAddMenu.controls.url.hasError('required')" class="error">
+                            Url is required.
+                        </p>
+                    </div>
+                    <div class="form-group" [class.error-style]="sbmAddMenu && formAddMenu.controls.permission_name.errors">
+                        <label>Permission Name</label>
+                        <input type="text" class="form-control" formControlName="permission_name">
+                        <p *ngIf="sbmAddMenu && formAddMenu.controls.permission_name.hasError('required')" class="error">
+                            Permission Name is required.
+                        </p>
+                    </div>
+                    <div class="form-group" [class.error-style]="sbmAddMenu && formAddMenu.controls.description.errors">
+                        <label>Description</label>
+                        <input type="text" class="form-control" formControlName="description">
+                        <p *ngIf="sbmAddMenu && formAddMenu.controls.description.hasError('required')" class="error">
+                            Description is required.
+                        </p>
+                    </div>
+                    <div class="form-group" [class.error-style]="sbmAddMenu && formAddMenu.controls.target.errors">
+                        <label>Target</label>
+                        <input type="text" class="form-control" formControlName="target">
+                        <p *ngIf="sbmAddMenu && formAddMenu.controls.target.hasError('required')" class="error">
+                            Target is required.
+                        </p>
+                    </div>
+                    <div class="form-group" [class.error-style]="sbmAddMenu && formAddMenu.controls.icon_class.errors">
+                        <label>Icon</label>
+                        <input type="text" class="form-control" formControlName="icon_class">
+                        <p *ngIf="sbmAddMenu && formAddMenu.controls.icon_class.hasError('required')" class="error">
+                            Icon is required.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="modalAddGroup" class="modal fade" role="dialog">
+    <form class="form-addMenu" [formGroup]="formAddGroup" (ngSubmit)="addGroup()" novalidate>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add New Group</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group" [class.error-style]="sbmAddGroup && formAddGroup.controls.name.errors">
+                        <label>Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                        <p *ngIf="sbmAddGroup && formAddGroup.controls.name.hasError('required')" class="error">
+                            Name is required.
+                        </p>
+                    </div>
+                    <div class="form-group" [class.error-style]="sbmAddGroup && formAddGroup.controls.description.errors">
+                        <label>Description</label>
+                        <input type="text" class="form-control" formControlName="description">
+                        <p *ngIf="sbmAddGroup && formAddGroup.controls.description.hasError('required')" class="error">
+                            Description is required.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="modalEditGroup" class="modal fade" role="dialog">
+    <form class="form-addMenu" [formGroup]="formEditGroup" (ngSubmit)="editGroup()" novalidate>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Edit Group</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group" [class.error-style]="sbmEditGroup && formEditGroup.controls.name.errors">
+                        <label>Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                        <p *ngIf="sbmEditGroup && formEditGroup.controls.name.hasError('required')" class="error">
+                            Name is required.
+                        </p>
+                    </div>
+                    <div class="form-group" [class.error-style]="sbmEditGroup && formEditGroup.controls.description.errors">
+                        <label>Description</label>
+                        <input type="text" class="form-control" formControlName="description">
+                        <p *ngIf="sbmEditGroup && formEditGroup.controls.description.hasError('required')" class="error">
+                            Description is required.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

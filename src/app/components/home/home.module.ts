@@ -15,7 +15,7 @@ import {BreadcrumbDirective, HeaderDirective, MainMenuDirective, MainBodyDirecti
 
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {OrdersListComponent} from './orders/orders.component';
-import {MenuComponent} from './menu/menu.component';
+import {MenuComponent, TreeView} from './menu/index';
 
 @NgModule({
     imports: [
@@ -30,7 +30,7 @@ import {MenuComponent} from './menu/menu.component';
         BreadcrumbDirective, HeaderDirective, MainMenuDirective, MainBodyDirective,
         DashboardComponent,
         OrdersListComponent,
-        MenuComponent
+        MenuComponent, TreeView
     ],
     providers: [
         Title,

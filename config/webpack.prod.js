@@ -34,7 +34,7 @@ module.exports = webpackMerge(commonConfig, {
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': JSON.stringify(ENV),
-                'apiUrl': JSON.stringify('http://api.fastcard.vn')
+                'apiUrl': JSON.stringify('http://tyk-portal.seldatdirect.com/wms2-core-dev')
             }
         })
     ]

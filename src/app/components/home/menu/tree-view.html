@@ -1,0 +1,40 @@
+<ol class="dd-list">
+    <li *ngFor="let menu of listMenus" class="dd-item"
+        attr.data-menu_id="{{menu.menu_id}}" attr.data-name="{{menu.name}}"
+        attr.data-description="{{menu.description}}"
+        attr.data-url="{{menu.url}}" attr.data-permission_name="{{menu.permission_name}}"
+        attr.data-target="{{menu.target}}" attr.data-icon_class="{{menu.icon_class}}">
+        <div class="dd-handle">{{menu.name}}</div>
+        <span class="btn-edit" (click)="menu.edit=!menu.edit"></span>
+        <div *ngIf="menu.edit" class="menu-item-setting clearfix form-style">
+            <div class="form-group col-md-4">
+                <label>Menu Name</label>
+                <input type="text"  [(ngModel)]="menu.name" attr.data-ref="name" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Url</label>
+                <input type="text" [(ngModel)]="menu.url" attr.data-ref="url" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Permission name</label>
+                <input type="text" [(ngModel)]="menu.permission_name" attr.data-ref="permission_name" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Icon class</label>
+                <input type="text" [(ngModel)]="menu.icon_class" attr.data-ref="icon_class" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Target</label>
+                <input type="text" [(ngModel)]="menu.target" attr.data-ref="target" class="form-control">
+            </div>
+            <div class="form-group col-md-4">
+                <label>Description</label>
+                <input type="text" [(ngModel)]="menu.description" attr.data-ref="description" class="form-control">
+            </div>
+            <div class="col-md-12 row-button">
+                <button (click)="removeItem(menu)" title="Remove in list" class="btn btn-danger pull-right"><span class="fa fa-trash"></span>Remove</button>
+            </div>
+        </div>
+        <tree-view [listMenus]="menu.nodes" *ngIf="menu.nodes.length!=0"></tree-view>
+    </li>
+</ol>

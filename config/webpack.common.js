@@ -15,7 +15,11 @@ module.exports = {
 
     resolve: {
         extensions: ['', '.ts', '.js'],
-        modules: [helpers.root('src'), helpers.root('node_modules')]
+        modules: [helpers.root('src'), helpers.root('node_modules')],
+        alias: {
+            'jquery': helpers.root('node_modules/jquery/src/jquery'),
+            'saveAs': helpers.root('node_modules/file-saver/FileSaver')
+        }
     },
 
     module: {
@@ -24,11 +28,6 @@ module.exports = {
                 test: /\.ts$/,
                 exclude: [/\.(spec|e2e)\.ts$/],
                 loaders: ['awesome-typescript', 'angular2-template']
-            },
-            {
-                test: /\.js$/,
-                include: helpers.root('src', 'assets'),
-                loaders: 'script'
             },
             {
                 test: /\.html$/,
@@ -65,7 +64,6 @@ module.exports = {
         new CopyWebpackPlugin([
             {from: helpers.root('src/assets/icon'), to: 'assets/icon'},
             {from: helpers.root('src/assets/images'), to: 'assets/images'}
-            // {from: helpers.root('src/assets/js'), to: 'assets/js'}
         ]),
 
         new HtmlWebpackPlugin({
@@ -75,7 +73,8 @@ module.exports = {
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery',
-            'window.jQuery': 'jquery'
+            'window.jQuery': 'jquery',
+            'saveAs': 'saveAs'
         })
     ]
 };

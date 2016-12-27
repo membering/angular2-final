@@ -8,12 +8,24 @@ export class MenuService {
         private http: HttpClient
     ) {}
 
-    getGroupMenus() {
+    getGroup() {
         return this.http.get('/master-service/v1/menus');
     }
 
-    getMenusByGroupId(id: any) {
+    addGroup(data: any) {
+        return this.http.post('/master-service/v1/menus', data);
+    }
+
+    editGroup(id: number, data: any) {
+        return this.http.post('/master-service/v1/menus' + id, data);
+    }
+
+    getMenusByGroupId(id: number) {
         return this.http.get('/master-service/v1/menus/' + id);
+    }
+
+    updateMenusByGroupId(id: number, data: any) {
+        return this.http.post('/master-service/v1/menus/' + id, data);
     }
 
     getLeftMenu() {

@@ -27,23 +27,23 @@
     })();
 
     var defaults = {
-            listNodeName    : 'ol',
-            itemNodeName    : 'li',
-            rootClass       : 'dd',
-            listClass       : 'dd-list',
-            itemClass       : 'dd-item',
-            dragClass       : 'dd-dragel',
-            handleClass     : 'dd-handle',
-            collapsedClass  : 'dd-collapsed',
-            placeClass      : 'dd-placeholder',
-            noDragClass     : 'dd-nodrag',
-            emptyClass      : 'dd-empty',
-            expandBtnHTML   : '<button data-action="expand" type="button">Expand</button>',
-            collapseBtnHTML : '<button data-action="collapse" type="button">Collapse</button>',
-            group           : 0,
-            maxDepth        : 5,
-            threshold       : 20
-        };
+        listNodeName    : 'ol',
+        itemNodeName    : 'li',
+        rootClass       : 'dd',
+        listClass       : 'dd-list',
+        itemClass       : 'dd-item',
+        dragClass       : 'dd-dragel',
+        handleClass     : 'dd-handle',
+        collapsedClass  : 'dd-collapsed',
+        placeClass      : 'dd-placeholder',
+        noDragClass     : 'dd-nodrag',
+        emptyClass      : 'dd-empty',
+        expandBtnHTML   : '<button data-action="expand" type="button">Expand</button>',
+        collapseBtnHTML : '<button data-action="collapse" type="button">Collapse</button>',
+        group           : 0,
+        maxDepth        : 5,
+        threshold       : 20
+    };
 
     function Plugin(element, options)
     {
@@ -76,7 +76,6 @@
                 var target = $(e.currentTarget),
                     action = target.data('action'),
                     item   = target.parent(list.options.itemNodeName);
-                    console.log(action);
                 if (action === 'collapse') {
                     list.collapseItem(item);
                 }
@@ -84,11 +83,6 @@
                     list.expandItem(item);
                 }
             });
-
-            /*list.el.find('input[type="text"]').on("change paste keyup", function() {
-               list.serialize();
-               console.log("update serialize");
-            });*/
 
             var onStartEvent = function(e)
             {
@@ -110,13 +104,11 @@
                 }
 
                 e.preventDefault();
-                list.dragStart(e.touches ? e.touches[0] : e);               
+                list.dragStart(e.touches ? e.touches[0] : e);
             };
 
             var onMoveEvent = function(e)
             {
-                
-
                 if (list.dragEl) {
                     e.preventDefault();
                     list.dragMove(e.touches ? e.touches[0] : e);
@@ -142,55 +134,29 @@
             list.w.on('mousemove', onMoveEvent);
             list.w.on('mouseup', onEndEvent);
 
-            var isDragging = false;
-            list.el.on('mousedown',function() {
-                isDragging = false;
-            })
-            .mousemove(function() {
-                isDragging = true;
-             })
-            .mouseup(function() {
-                var wasDragging = isDragging;
-                isDragging = false;
-            });
-
         },
 
         serialize: function()
         {
-          
-
             var data,
                 depth = 0,
                 list  = this;
-                step  = function(level, depth)
+            step  = function(level, depth)
+            {
+                var array = [ ],
+                    items = level.children(list.options.itemNodeName);
+                items.each(function()
                 {
-                    var array = [ ],
-                        items = level.children(list.options.itemNodeName);
-                    items.each(function()
-                    {
-                        var li   = $(this),
-                            data={
-                                menu_id: li.attr('data-id'),
-                                name: li.attr('data-name'),
-                                description: li.attr('data-description'),
-                                url: li.attr('data-url'),
-                                target: li.attr('data-target'),
-                                permission_name: li.attr('data-permission_name'),
-                                icon_class: li.attr('data-icon_class'),
-                                nodes:[]
-                            },
-                            item = $.extend({},data),
-                            sub  = li.find(list.options.listNodeName);
-
-                        if (sub.length) {
-                            item.nodes = step(sub, depth + 1);
-                        }
-                        array.push(item);
-
-                    });
-                    return array;
-                };
+                    var li   = $(this),
+                        item = $.extend({}, li.data()),
+                        sub  = li.find(list.options.listNodeName);
+                    if (sub.length) {
+                        item.nodes = step(sub, depth + 1);
+                    }
+                    array.push(item);
+                });
+                return array;
+            };
             data = step(list.el.find(list.options.listNodeName).first(), depth);
             return data;
         },
@@ -243,8 +209,8 @@
             var lists = li.find(this.options.listNodeName);
             if (lists.length) {
                 li.addClass(this.options.collapsedClass);
-                li.find('[data-action="collapse"]').hide();
-                li.find('[data-action="expand"]').show();
+                li.children('[data-action="collapse"]').hide();
+                li.children('[data-action="expand"]').show();
                 li.find(this.options.listNodeName).hide();
             }
         },
@@ -267,9 +233,7 @@
 
         setParent: function(li)
         {
-            /*change  from children to find*/
             if (li.find(this.options.listNodeName).length) {
-                console.log('setParent');
                 li.prepend($(this.options.expandBtnHTML));
                 li.prepend($(this.options.collapseBtnHTML));
             }
@@ -466,7 +430,7 @@
                     return;
                 }
                 var before = e.pageY < (this.pointEl.offset().top + this.pointEl.height() / 2);
-                    parent = this.placeEl.parent();
+                parent = this.placeEl.parent();
                 // if empty create new list to replace empty placeholder
                 if (isEmpty) {
                     list = $(document.createElement(opt.listNodeName)).addClass(opt.listClass);
@@ -517,4 +481,4 @@
         return retval || lists;
     };
 
-})(jQuery || window.jQuery || window.Zepto, window, document);
+})(window.jQuery || window.Zepto, window, document);

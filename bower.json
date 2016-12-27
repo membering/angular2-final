@@ -1,7 +1,7 @@
 {
-  "name": "angular2-webpack",
+  "name": "seldat-framework",
   "version": "1.0.0",
-  "description": "A webpack starter for Angular",
+  "description": "Seldat Framework based on Angular2 Final",
   "license": "MIT",
   "authors": [
     "Thien Nguyen <thien.nguyen@seldatinc.com>"
@@ -14,7 +14,6 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "SpinKit": "^1.2.5",
-    "simple-line-icons": "^2.4.1",
-    "jquery-ui": "^1.12.1"
+    "simple-line-icons": "^2.4.1"
   }
 }
