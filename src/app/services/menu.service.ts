@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {Headers} from "@angular/http";
 import {HttpClient} from '../_libraries/http.client';
 
 @Injectable()
